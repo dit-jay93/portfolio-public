@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .title { font: 700 34px 'Arial'; fill:#0f172a; }
+      .subtitle { font: 500 16px 'Arial'; fill:#334155; }
+      .box { fill:#f8fafc; stroke:#3b82f6; stroke-width:2; rx:16; }
+      .head { font:700 22px 'Arial'; fill:#1e3a8a; }
+      .txt { font:500 16px 'Arial'; fill:#0f172a; }
+      .note { fill:#ecfeff; stroke:#06b6d4; stroke-width:2; rx:12; }
+      .noteTxt { font:600 14px 'Arial'; fill:#155e75; }
+      .arr { stroke:#64748b; stroke-width:3; marker-end:url(#m); fill:none; }
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="60" y="60" class="title">Media Infra &amp; Pipeline Architecture</text>
+  <text x="60" y="88" class="subtitle">R&amp;D Home Lab / Ubuntu + NAS + Docker + Resolve 연동</text>
+
+  <rect x="60" y="130" width="260" height="140" class="box"/>
+  <text x="80" y="165" class="head">Client Layer</text>
+  <text x="80" y="195" class="txt">• Mac / PC</text>
+  <text x="80" y="220" class="txt">• DaVinci Resolve</text>
+  <text x="80" y="245" class="txt">• SFTP/SMB Clients</text>
+
+  <rect x="380" y="130" width="320" height="140" class="box"/>
+  <text x="400" y="165" class="head">Access Layer</text>
+  <text x="400" y="195" class="txt">• SMB (Samba)</text>
+  <text x="400" y="220" class="txt">• SFTP (SSH)</text>
+  <text x="400" y="245" class="txt">• HTTPS (Nginx)</text>
+
+  <rect x="760" y="130" width="360" height="140" class="box"/>
+  <text x="780" y="165" class="head">Core Server (Ubuntu)</text>
+  <text x="780" y="195" class="txt">• Scheduler / Queue</text>
+  <text x="780" y="220" class="txt">• OpenClaw Gateway</text>
+  <text x="780" y="245" class="txt">• Service Orchestration</text>
+
+  <rect x="1180" y="130" width="360" height="140" class="box"/>
+  <text x="1200" y="165" class="head">Processing Layer</text>
+  <text x="1200" y="195" class="txt">• Docker Encoding Cluster</text>
+  <text x="1200" y="220" class="txt">• worker1 / worker2 / worker3</text>
+  <text x="1200" y="245" class="txt">• ingestor</text>
+
+  <rect x="380" y="360" width="740" height="190" class="box"/>
+  <text x="400" y="395" class="head">Storage Layer (NAS)</text>
+  <text x="400" y="425" class="txt">/srv/nas-data/nasuser</text>
+  <text x="400" y="455" class="txt">• 00_INBOX  • 03_DOCS  • 06_MEDIA (incoming/outcoming)  • 08_PIPELINE</text>
+  <text x="400" y="485" class="txt">• incoming_jobs / queue / running / done / failed / logs</text>
+  <text x="400" y="515" class="txt">• SFTP project paths (PRJxxx)</text>
+
+  <rect x="60" y="610" width="1480" height="170" class="box"/>
+  <text x="80" y="645" class="head">Observability Layer</text>
+  <text x="80" y="675" class="txt">• Grafana • Prometheus • Loki • Promtail • Dozzle • DCGM Exporter</text>
+  <text x="80" y="705" class="txt">• Logs + Metrics unified monitoring / troubleshooting workflow</text>
+
+  <rect x="1160" y="360" width="380" height="55" class="note"/>
+  <text x="1180" y="394" class="noteTxt">보안: SMB tailnet allowlist 적용</text>
+  <rect x="1160" y="425" width="380" height="55" class="note"/>
+  <text x="1180" y="459" class="noteTxt">보안: 모니터링 포트 Tailscale IP 바인딩</text>
+  <rect x="1160" y="490" width="380" height="55" class="note"/>
+  <text x="1180" y="524" class="noteTxt">보안: SFTP chroot 사용자 분리</text>
+
+  <path d="M320 200 L380 200" class="arr"/>
+  <path d="M700 200 L760 200" class="arr"/>
+  <path d="M1120 200 L1180 200" class="arr"/>
+  <path d="M1360 270 L1360 360 L1120 360" class="arr"/>
+  <path d="M940 270 L940 360" class="arr"/>
+  <path d="M560 550 L560 610" class="arr"/>
+  <path d="M940 550 L940 610" class="arr"/>
+
+</svg>
