@@ -1,0 +1,40 @@
+services:
+  worker1:
+    image: jrottenberg/ffmpeg:6.0-ubuntu
+    container_name: enc-worker-1
+    restart: unless-stopped
+    volumes:
+      - ./cluster-data:/data
+      - /srv/nas-data:/srv/nas-data
+      - ./worker.sh:/worker.sh:ro
+    entrypoint: ["/bin/bash", "/worker.sh"]
+
+  worker2:
+    image: jrottenberg/ffmpeg:6.0-ubuntu
+    container_name: enc-worker-2
+    restart: unless-stopped
+    volumes:
+      - ./cluster-data:/data
+      - /srv/nas-data:/srv/nas-data
+      - ./worker.sh:/worker.sh:ro
+    entrypoint: ["/bin/bash", "/worker.sh"]
+
+  worker3:
+    image: jrottenberg/ffmpeg:6.0-ubuntu
+    container_name: enc-worker-3
+    restart: unless-stopped
+    volumes:
+      - ./cluster-data:/data
+      - /srv/nas-data:/srv/nas-data
+      - ./worker.sh:/worker.sh:ro
+    entrypoint: ["/bin/bash", "/worker.sh"]
+
+  ingestor:
+    image: bash:5.2
+    container_name: enc-ingestor
+    restart: unless-stopped
+    volumes:
+      - ./cluster-data:/data
+      - /srv/nas-data:/srv/nas-data
+      - ./auto_enqueue_incoming.sh:/auto_enqueue_incoming.sh:ro
+    entrypoint: ["bash", "/auto_enqueue_incoming.sh"]
