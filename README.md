@@ -4,7 +4,7 @@
 
 ## 미리보기 (핵심 스크린샷)
 
-### 1) DaVinci Resolve Export UI
+### 1) DaVinci Resolve Consol
 ![DaVinci Resolve Export UI](assets/davinci-console.png)
 
 ### 2) Export to Render Queue
