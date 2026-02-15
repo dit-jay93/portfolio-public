@@ -4,23 +4,21 @@
 
 ## 미리보기 (핵심 스크린샷)
 
-### 1) DaVinci Resolve Console
-![DaVinci Resolve Export UI](assets/davinci-console.png)
+### 1) Architecture Diagram
+![Architecture Diagram](assets/architecture-diagram.svg)
 
 ### 2) Export to Render Queue
 ![Export to Render Queue](assets/export2render-queue.png)
 
-### 3) Pipeline Log Monitoring (Dozzle)
+### 3) DaVinci Resolve Console
+![DaVinci Resolve Export UI](assets/davinci-console.png)
+
+### 4) Pipeline Log Monitoring (Dozzle)
 ![Dozzle Monitoring](assets/dozzle.png)
 
-### 4) Portfolio Full View
+### 5) Portfolio Full View
 ![Portfolio Full](assets/portfolio-full.png)
 
-### 5) Portfolio Latest View
-![Portfolio Latest](assets/portfolio-latest.png)
-
-### 6) Architecture Diagram
-![Architecture Diagram](assets/architecture-diagram.svg)
 
 ---
 
